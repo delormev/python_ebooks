@@ -42,9 +42,7 @@ def filter_tweet(tweet):
             tweet.text = re.sub(item, entity(item), tweet.text)    
     tweet.text = re.sub(r'\xe9', 'e', tweet.text) #take out accented e
     return tweet.text
-                     
-                     
-                                                    
+
 def grab_tweets(api, max_id=None):
     source_tweets=[]
     user_tweets = api.GetUserTimeline(screen_name=user, count=200, max_id=max_id, include_rts=True, trim_user=True, exclude_replies=True)
